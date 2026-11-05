@@ -1,0 +1,95 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-8 col-lg-6 mx-auto">
+
+        <div class="listing-form-card">
+
+            <h2 class="form-title">Add a New Listing</h2>
+            <p class="form-subtitle">Share your place with the world!</p>
+
+            <form method="POST" action="/listings">
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label class="form-label">Listing Title</label>
+                    <input
+                        name="listing[title]"
+                        placeholder="Enter your property name"
+                        type="text"
+                        class="form-control"
+                        required>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea
+                        name="listing[description]"
+                        placeholder="Describe your property..."
+                        class="form-control"
+                        rows="4"
+                        required></textarea>
+                </div>
+
+                <!-- Image URL -->
+                <div class="mb-3">
+                    <label class="form-label">Image URL</label>
+                    <input
+                        name="listing[image][url]"
+                        placeholder="Paste your image URL"
+                        type="url"
+                        class="form-control"
+                        required>
+                    <input type="hidden" name="listing[image][filename]" value="listingimage">
+                </div>
+
+                <!-- Price -->
+                <div class="mb-3">
+                    <label class="form-label">Price per night (₹)</label>
+                    <input
+                        name="listing[price]"
+                        placeholder="Enter price"
+                        type="number"
+                        min="1"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="row">
+
+                    <!-- Country -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Country</label>
+                        <input
+                            name="listing[country]"
+                            placeholder="Enter country"
+                            type="text"
+                            class="form-control"
+                            required>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Location</label>
+                        <input
+                            name="listing[location]"
+                            placeholder="Enter city"
+                            type="text"
+                            class="form-control"
+                            required>
+                    </div>
+
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn add-listing-btn w-100">
+                    <i class="bi bi-plus-circle me-2"></i>
+                    Add Listing
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
